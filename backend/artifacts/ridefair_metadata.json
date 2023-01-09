@@ -1,0 +1,365 @@
+{
+	"compiler": {
+		"version": "0.4.22+commit.4cb486ee"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "riderNumber",
+						"type": "uint256"
+					},
+					{
+						"name": "arrivalTime",
+						"type": "uint256"
+					}
+				],
+				"name": "pickRider",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "getWaitingRiders",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "userReset",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "driveRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userList",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "loc",
+						"type": "int256[]"
+					}
+				],
+				"name": "informRider",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"name": "isUser",
+						"type": "bool"
+					},
+					{
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"name": "state",
+						"type": "uint8"
+					},
+					{
+						"name": "currPairing",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"name": "lat",
+								"type": "int256"
+							},
+							{
+								"name": "long",
+								"type": "int256"
+							}
+						],
+						"name": "pickup",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"name": "lat",
+								"type": "int256"
+							},
+							{
+								"name": "long",
+								"type": "int256"
+							}
+						],
+						"name": "dropoff",
+						"type": "tuple"
+					},
+					{
+						"name": "arrivalTime",
+						"type": "uint256"
+					},
+					{
+						"name": "driverArrived",
+						"type": "bool"
+					},
+					{
+						"name": "inProgress",
+						"type": "bool"
+					},
+					{
+						"name": "escrow",
+						"type": "uint256"
+					},
+					{
+						"name": "paid",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "payDriver",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "pick",
+						"type": "int256[]"
+					},
+					{
+						"name": "drop",
+						"type": "int256[]"
+					},
+					{
+						"name": "tripCost",
+						"type": "uint256"
+					}
+				],
+				"name": "rideRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getNumber",
+				"outputs": [
+					{
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "riderNumber",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"name": "lat",
+								"type": "int256"
+							},
+							{
+								"name": "long",
+								"type": "int256"
+							}
+						],
+						"indexed": false,
+						"name": "pick",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"name": "lat",
+								"type": "int256"
+							},
+							{
+								"name": "long",
+								"type": "int256"
+							}
+						],
+						"indexed": false,
+						"name": "drop",
+						"type": "tuple"
+					},
+					{
+						"indexed": false,
+						"name": "escrow",
+						"type": "uint256"
+					}
+				],
+				"name": "RiderDetails",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "riderNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "arrivalTime",
+						"type": "uint256"
+					}
+				],
+				"name": "RiderPicked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "driverNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "bills",
+						"type": "uint256"
+					}
+				],
+				"name": "cashMoney",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "riderNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "location",
+						"type": "int256[]"
+					}
+				],
+				"name": "imHere",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "usrNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "pairNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "cancelFee",
+						"type": "uint256"
+					}
+				],
+				"name": "undone",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ridefair.sol": "ridefair"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ridefair.sol": {
+			"keccak256": "0xfb57f0b880015eb5015e5772984cf955df71cce0bbf81df3ad505c91f6afcb89",
+			"urls": [
+				"bzzr://03c7de1c941213f8f42b16455e60827b7ca2471648cfe40541c01e486e9fbc91"
+			]
+		}
+	},
+	"version": 1
+}
